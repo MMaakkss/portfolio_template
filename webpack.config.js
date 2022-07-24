@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
@@ -13,6 +14,7 @@ module.exports = {
         scripts: './src/index.js',
     },
     output: {
+        path: path.resolve(__dirname, './docs'),
         filename: '[name].[contenthash].js',
         clean: true,
     },
